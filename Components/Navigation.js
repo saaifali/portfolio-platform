@@ -54,19 +54,19 @@ const Navigation = () => {
                     Home
                   </a>
                 </Link>
-                <Link href='/'>
+                <Link href='/services'>
                   <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black dark:text-white font-bold items-center justify-center hover:bg-gray-600 hover:text-white'>
-                    Services
+                    Career
                   </a>
                 </Link>
-                <Link href='/'>
+                <Link href='/about-us'>
                   <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black dark:text-white font-bold items-center justify-center hover:bg-gray-600 hover:text-white'>
-                    About us
+                    Experiences
                   </a>
                 </Link>
-                <Link href='/'>
+                <Link href='/contact'>
                   <a className='lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black dark:text-white font-bold items-center justify-center hover:bg-gray-600 hover:text-white'>
-                    Contact us
+                    Contact me
                   </a>
                 </Link>
               </div>
