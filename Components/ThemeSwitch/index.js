@@ -1,6 +1,5 @@
-import React,{ useEffect, useState, useContext } from 'react'
+import React,{ useEffect, useState } from 'react'
 import Styles from './ThemeSwitch.module.scss';
-import {DARK} from "../ThemeProvider";
 
 const ThemeSwitch = () => {
     const DARK = 'DARK';
