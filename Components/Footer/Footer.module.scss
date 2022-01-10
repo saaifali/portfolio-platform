@@ -1,0 +1,44 @@
+@import "../../styles/colors";
+
+.footerMainContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 56rem;
+  margin: 3rem auto 0 auto;
+  padding: 3rem 1rem 9rem 1rem;
+}
+
+.footerMainContentContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.footerBorder {
+  border-top: 2px solid;
+  border-top-color: $gray;
+  padding-bottom: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footerData {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linksContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.linkData {
+  color: inherit;
+  text-decoration: none;
+  margin: 1rem;
+}
+
+.linkData:hover {
+  color: $yellow;
+}

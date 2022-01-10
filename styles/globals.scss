@@ -1,0 +1,56 @@
+body {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+@mixin content($background, $color) {
+  background: $background;
+  color: $color;
+}
+
+body.dark-mode {
+  @include content(#000000, #ffffff);
+  svg.svg-btn {
+    fill: #ffffff;
+  }
+  a.resume-download-button {
+    background: white;
+    color: black;
+    svg {
+      fill: black;
+    }
+  }
+}
+
+body.light-mode {
+  @include content(#ffffff, #000000);
+  svg.svg-btn {
+    fill: #000000;
+  }
+  a.resume-download-button {
+    background: black;
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media(min-width: 640px) and (max-width: 767px) {
+  .container {
+    max-width: 640px;
+  }
+}
+

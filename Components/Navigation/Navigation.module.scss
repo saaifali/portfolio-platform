@@ -1,0 +1,53 @@
+@import "../../styles/colors";
+
+.navBarMainContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+.nameDivContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.25rem;
+  letter-spacing: 0.05rem;
+  color: inherit;
+}
+
+.nameDivContent {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.navLinkContainer {
+  display: inline-flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.navLinkContentContainer {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.navLinkData {
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  color: inherit;
+}
+
+.navLinkData:hover {
+  border-radius: 0.25rem;
+  background: #4b5563;
+  color: #ffffff;
+}
