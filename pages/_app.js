@@ -8,13 +8,13 @@ import Styles from "./index.module.scss";
 function MyApp({ Component, pageProps }) {
 
   return (
-        <>
+        <div className={Styles.mainContainer}>
           <Navigation/>
           <main className={Styles.mainClass}>
             <Component {...pageProps} />
           </main>
           <Footer/>
-        </>
+        </div>
   );
 }
 
