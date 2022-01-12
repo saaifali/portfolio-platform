@@ -1,16 +1,21 @@
-import 'tailwindcss/tailwind.css'
+import React from 'react';
 import Navigation from "../components/Navigation";
-import { ThemeProvider } from 'next-themes'
 import Footer from '../Components/Footer';
+import '../styles/globals.scss';
+import Head from "./index";
+import Styles from "./index.module.scss";
 
 function MyApp({ Component, pageProps }) {
-  return <>
-    <ThemeProvider attribute="class" enableSystem={false}>
-    <Navigation/>
-    <Component {...pageProps} />
-    <Footer/>
-    </ThemeProvider>
-    </>
+
+  return (
+        <div className={Styles.mainContainer}>
+          <Navigation/>
+          <main className={Styles.mainClass}>
+            <Component {...pageProps} />
+          </main>
+          <Footer/>
+        </div>
+  );
 }
 
 export default MyApp

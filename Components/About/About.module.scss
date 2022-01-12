@@ -1,0 +1,61 @@
+.aboutMainContainer {
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.aboutMainContentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.aboutTextContainer {
+  padding: 0 1rem;
+  margin: 3rem 0 0 0;
+  text-align: left;
+}
+
+.aboutTextHeader {
+  font-weight: 700;
+}
+
+.aboutTextContent {
+  margin-top: 1.5rem;
+  font-weight: 300;
+}
+
+.aboutTextPara {
+  margin-bottom: 1rem;
+}
+
+.buttonDiv {
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.buttonDiv:hover {
+  background: #9ca3af;
+}
+
+.buttonSVG {
+  fill: white;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.imageContainer {
+  margin-top: 3rem;
+  padding: 0 1rem;
+  margin-bottom: 2.5rem;
+  flex-shrink: 0;
+}
+
+.imageContent {
+  border-radius: 999999px;
+}

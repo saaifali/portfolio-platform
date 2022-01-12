@@ -1,0 +1,11 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
+.mainClass {
+  max-width: 56rem;
+  margin: 4rem auto 0 auto;
+  flex-grow: 1;
+}
