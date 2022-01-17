@@ -5,7 +5,9 @@
 }
 
 .mainClass {
+  display: flex;
   max-width: 56rem;
   margin: 4rem auto 0 auto;
   flex-grow: 1;
+  width: 100%;
 }

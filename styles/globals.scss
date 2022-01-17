@@ -20,6 +20,10 @@ body.dark-mode {
       fill: black;
     }
   }
+  .button-style {
+    background: white;
+    color: black;
+  }
 }
 
 body.light-mode {
@@ -34,6 +38,18 @@ body.light-mode {
       fill: white;
     }
   }
+  .button-style {
+    background: black;
+    color: white;
+  }
+}
+
+.button-style {
+  cursor: pointer;
+}
+
+.button-style:active {
+  opacity: 0.75;
 }
 
 @media(min-width: 1024px) {

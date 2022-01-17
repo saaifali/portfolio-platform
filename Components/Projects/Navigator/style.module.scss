@@ -1,0 +1,32 @@
+@import "../../../styles/colors";
+
+.navigatorMainContainer {
+  display: flex;
+  flex-grow: 1;
+  background: purple;
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-top: 2px solid $gray;
+  padding: 0.5rem 1rem;
+}
+
+.labelStyles {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.25rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0.5rem 1rem;
+  input {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
