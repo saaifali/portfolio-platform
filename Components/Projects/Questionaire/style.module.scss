@@ -1,0 +1,79 @@
+.questionaireContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectDetailsDiv {
+  display: flex;
+  flex-direction: row;
+}
+
+.dropDownContainer {
+  margin: 1rem;
+}
+
+.radioBtnContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.headerContainer {
+
+}
+
+.radioBtnContentContainer {
+  padding: 0.5rem;
+  label, input {
+    cursor: pointer;
+    margin: 0 0.25rem;
+  }
+}
+
+.commandContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.commandContentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.commandContentHeader {
+
+}
+
+$commandBoxWidth: 50vw;
+
+.commandMainContent {
+  max-width: $commandBoxWidth;
+  min-width: $commandBoxWidth;
+}
+
+.csvUploadContainer {
+  margin: 1rem;
+  label {
+    display: flex;
+    flex-direction: column;
+    label {
+      padding: 0.5rem 1rem;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+  }
+  input {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 0;
+  div {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+}

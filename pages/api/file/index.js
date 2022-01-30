@@ -2,26 +2,33 @@ import nc from 'next-connect';
 import multer from 'multer';
 // import {createNecessaryDirectoriesSync} from "filesac";
 import fs from 'fs';
+import path from 'path';
 
-const baseUploadPath = '/Users/ankitsbhamra/Documents/portfolio-platform/files'
+const baseUploadPath = '/Users/ankitsbhamra/Documents/portfolio-platform/files';
+const dockerTemplatesPath = '/Users/ankitsbhamra/Documents/portfolio-platform/pages/api/file/templates';
+let baseFolderPath = null;
+const configFileName = 'readmeConfig.json';
+const fileMap = {"node":"NodeDockerfile"};
 
 const storage = multer.diskStorage({ // notice you are calling the multer.diskStorage() method here, not multer()
     destination: function(req, file, cb) {
         const relPath = file.originalname.substring(0, file.originalname.lastIndexOf('/'));
+        if (!baseFolderPath) {
+            baseFolderPath = relPath.substring(0, relPath.indexOf('/'));
+        }
         const filePath = `${baseUploadPath}/${relPath}`;
         try {
             if (!fs.existsSync(filePath)) {
                 fs.mkdirSync(filePath, true);
             }
         } catch (e) {
-            console.log('Errorrrr::::', filePath);
+            console.log('File Write Error::', filePath);
         } finally {
             cb(null, filePath);
         }
     },
     filename: function(req, file, cb) {
         const fileName = file.originalname.substring(file.originalname.lastIndexOf('/') + 1);
-        console.log('FileName::: ', fileName);
         cb(null, fileName);
     }
 });
@@ -48,22 +55,41 @@ const handler = nc({
 })
     .use(upload.array('fileData'))
     .post((req, res) => {
-        console.log('Files: ', req.files.length);
+        createDockerImage();
         res.status(200).json({message: 'OK'});
     });
 
-// export default middleware( (req, res) => {
-//     const { method } = req;
-//     if (method === 'POST') {
-//         handlePostReq(req, res);
-//     }else {
-//         res.status(200).json({message: 'Non POST'});
-//     }
-// });
+const generateDocker = config => {
+    const pathVal=path.join(dockerTemplatesPath, `${fileMap[config.projectType]}`);
+    fs.readFile(pathVal, 'utf8', (err, lines) => {
+        const lineArr = lines.split('\n');
+        const injectedDockerFile = lineArr.map(el =>
+            el.includes('$buildCommand')
+                ? el.replace('$buildCommand', config.buildCommand)
+                : (el.includes('$runCommand')
+                    ? el.replace('$runCommand', config.runCommand)
+                    : el
+                )
+            ).join('\n');
+        fs.writeFile(`${baseUploadPath}/${baseFolderPath}/Dockerfile`, injectedDockerFile, err => {
+            if (err) {
+                throw err;
+            }
+        })
+    });
+};
 
-const handlePostReq = (req, res) => {
-    console.log('Request: ', req.files);
-    res.status(200).json({message: 'OK'});
+const createDockerImage = () => {
+    readConfigFile(generateDocker);
+};
+
+const readConfigFile = (cb) => {
+    fs.readFile(`${baseUploadPath}/${baseFolderPath}/${configFileName}`,'utf8', (err, data) => {
+        if (err) {
+            throw err;
+        }
+        cb(JSON.parse(data));
+    });
 };
 
 export default handler;

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import ThemeSwitch from "../ThemeSwitch";
+import ThemeSwitch from "../Common/ThemeSwitch";
 import { useState } from 'react';
 import Styles from './Navigation.module.scss';
   

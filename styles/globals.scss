@@ -20,9 +20,15 @@ body.dark-mode {
       fill: black;
     }
   }
-  .button-style {
+  .button-style, .background-style {
     background: white;
     color: black;
+  }
+
+  .button-style-inverted , .background-style-inverted{
+    background: black;
+    color: white;
+    border: 1px solid white;
   }
 }
 
@@ -38,17 +44,24 @@ body.light-mode {
       fill: white;
     }
   }
-  .button-style {
+  .button-style, .background-style {
     background: black;
     color: white;
   }
+
+  .button-style-inverted , .background-style-inverted{
+    background: white;
+    color: black;
+    border: 1px solid black;
+  }
 }
 
-.button-style {
+.button-style, .button-style-inverted {
   cursor: pointer;
+  user-select: none;
 }
 
-.button-style:active {
+.button-style:active, .button-style-inverted:active {
   opacity: 0.75;
 }
 
